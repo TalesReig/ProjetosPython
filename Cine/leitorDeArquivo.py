@@ -5,6 +5,7 @@ with open('teste.txt',"r", encoding="utf_8") as arquivoTeste:
     comentarios = arquivoTeste.read().lower();
     comentarios = unidecode.unidecode(comentarios)
 
+
 def comentariosPositivos(comentarios):
     totpositivos = 0;
 
@@ -98,15 +99,17 @@ def filtrarComentarios(comentarios):
 
     cacularEstrelas();
 
-# def cacularEstrelas(int positivos, int negativos):
-#     pontos = 50;
+def cacularEstrelas(positivos, negativos):
 
-#     valorDeCadaCriticaOuElogio = 50/positivos;
 
-#     pontos = positivos*valorDeCadaCriticaOuElogio + negativos*valorDeCadaCriticaOuElogio;
+    pontos = 50;
 
-#     estrelas = pontos/100;
+    valorDeCadaCriticaOuElogio = 50/positivos;
 
-#     return("O filme foi classificado como",pontos*estrelas,"estrelas");
+    pontos = positivos*valorDeCadaCriticaOuElogio + negativos*valorDeCadaCriticaOuElogio;
 
+    estrelas = pontos/100;
+
+    return("O filme foi classificado como",pontos*estrelas,"estrelas");
+    
 filtrarComentarios(comentarios);
